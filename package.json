@@ -1,0 +1,22 @@
+{
+  "name": "rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoldmanCPSciences2/RESTfulAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoldmanCPSciences2/RESTfulAPI/issues"
+  },
+  "homepage": "https://github.com/GoldmanCPSciences2/RESTfulAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
