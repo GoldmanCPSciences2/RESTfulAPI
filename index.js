@@ -27,7 +27,7 @@ const app = express();
 const PORT = 8080;
 
 app.use(express.json()); //Used to parse JSON bodies
-app.use(express.urlencoded()); //Parse URL-encoded bodies
+//app.use(express.urlencoded()); //Parse URL-encoded bodies
 
 //var stuff = data.name === 'something';
 //res.send(data.find(({ name }) => name === "other guy").grades);
@@ -51,12 +51,30 @@ app.get("/grades/:studentId", (req, res) => {
 });
 
 app.post("/grades", (req, res) => {
-  let grades = req.body.grade;
-  let studentid = req.body.studentid;
-  console.log("got here");
-  if (grades !== null && studentid > 0) {
+  let grades = req.body;
+  let info = [];
+  for (var temp in grades) {
+    info.push(temp);
+  }
+  //console.log(grades[info[0]]);
+  if (grades[info[0]] > 0 && grades[info[1]] > 0) {
     res.sendStatus(200);
-    console.log("got inside if");
+  } else {
+    res.sendStatus(404);
+  }
+});
+
+app.post("/register", (req, res) => {
+  let user = req.body;
+  let info = [];
+  for (var temp in user) {
+    info.push(temp);
+  }
+  //console.log(grades[info[0]]);
+  if (user[info[0]] !== null && user[info[1]] !== null) {
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(404);
   }
 });
 
